@@ -23,9 +23,12 @@ class Trending extends React.Component {
     }
 
     render() {
-        return (
-            <div>
+        const listItems = this.state.gifs.data.map();
 
+        return (
+            <div className="TrendingBar">
+                <h1>Top Trending</h1>
+                <div className="trending">{listItems}</div>
             </div>
         );
     }
