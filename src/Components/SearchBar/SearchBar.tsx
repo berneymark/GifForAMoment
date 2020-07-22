@@ -2,7 +2,7 @@ import React from 'react';
 
 class SearchBar extends React.Component {
     componentDidMount() {
-        const GIPHY_API_SEARCH_URL = 'https://api.giphy.com/v1/gifs/search';
+        //const GIPHY_API_SEARCH_URL = 'https://api.giphy.com/v1/gifs/search';
         const GIPHY_API_RANDOM_URL = 'https://api.giphy.com/v1/gifs/random'
         const GIPHY_API_KEY = process.env.REACT_APP_GIPHY_API_KEY;
 
