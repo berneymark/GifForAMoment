@@ -23,7 +23,11 @@ class Trending extends React.Component<any, any> {
     }
 
     render() {
-        const listItems = this.state.gifs.data.map();
+        const listItems = this.state.gifs.data.map((item: any) =>
+            <a href={item.url} target="new" key={item.id}>
+                <img src={item.images.original.url}/>
+            </a>
+        );
 
         return (
             <div className="TrendingBar">
