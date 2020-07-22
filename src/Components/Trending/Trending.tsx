@@ -1,4 +1,5 @@
 import React from 'react';
+import './Trending.css';
 
 class Trending extends React.Component<any, any> {
     constructor(props: any) {
