@@ -14,7 +14,7 @@ class Trending extends React.Component<any, any> {
         const GIPHY_API_KEY = process.env.REACT_APP_GIPHY_API_KEY;
 
         fetch(GIPHY_API_TRENDING_URL + '?api_key=' + GIPHY_API_KEY
-            + '&limit=4')
+            + '&limit=5')
             .then((response) => response.json())
             .then((data) => {
                 this.setState({
