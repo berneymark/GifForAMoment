@@ -10,6 +10,7 @@ function App() {
     <div className="App">
       <Header></Header>
       <SearchBar></SearchBar>
+      <Trending></Trending>
     </div>
   );
 }
