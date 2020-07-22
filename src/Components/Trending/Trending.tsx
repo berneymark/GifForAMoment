@@ -12,7 +12,8 @@ class Trending extends React.Component<any, any> {
         const GIPHY_API_TRENDING_URL = 'https://api.giphy.com/v1/gifs/trending'
         const GIPHY_API_KEY = process.env.REACT_APP_GIPHY_API_KEY;
 
-        fetch(GIPHY_API_TRENDING_URL + '?api_key=' + GIPHY_API_KEY)
+        fetch(GIPHY_API_TRENDING_URL + '?api_key=' + GIPHY_API_KEY
+            + '&limit=4')
             .then((response) => response.json())
             .then((data) => {
                 this.setState({
@@ -25,7 +26,7 @@ class Trending extends React.Component<any, any> {
     render() {
         const listItems = this.state.gifs.data.map((item: any) =>
             <a href={item.url} target="new" key={item.id}>
-                <img src={item.images.original.url}/>
+                <img src={item.images.original.url} alt={item.title}/>
             </a>
         );
 
