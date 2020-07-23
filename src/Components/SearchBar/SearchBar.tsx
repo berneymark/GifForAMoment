@@ -1,10 +1,11 @@
 import React from 'react';
+import { TextField } from '@material-ui/core';
 
 class SearchBar extends React.Component {
     render() {
         return (
             <div>
-                <h1>This component has loaded.</h1>
+                <TextField id="outlined-search" label="Search" type="search" variant="outlined"></TextField>
             </div>
         );
     }
