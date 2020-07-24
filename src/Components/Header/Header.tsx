@@ -1,6 +1,7 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 import AppBar from '@material-ui/core/AppBar';
+import IconButton from '@material-ui/core/IconButton';
 import InputBase from '@material-ui/core/InputBase';
 import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
@@ -38,7 +39,7 @@ const styles = (theme:Theme) =>
         searchIcon: {
             padding: theme.spacing(0, 2),
             height: '100%',
-            position: 'absolute',
+            position: 'relative',
             pointerEvents: 'none',
             display: 'flex',
             alignItems: 'center',
@@ -65,11 +66,16 @@ const styles = (theme:Theme) =>
 
 function Header(props: any) {
     const { classes } = props;
+    const [searchVar, setSearchVar] = useState("");
+
+    var searchVal = "";
 
     const onSearch = (event: any) => {
-        event.preventDefault();
-        event.persist();
-        console.log(event.target.value);
+        console.log(searchVal);
+    }
+
+    const onType = (event: any) => {
+        searchVal = event.target.value;
     }
 
     return (
@@ -81,19 +87,19 @@ function Header(props: any) {
                         Gif For a Moment
                     </Typography>
                     <div className={classes.search}>
-                        <div className={classes.searchIcon}>
-                            <SearchIcon/>
-                        </div>
                         <InputBase
                             classes={{
                                 root: classes.inputRoot,
                                 input: classes.inputInput
                             }}
                             placeholder="search..."
-                            onChange={onSearch}
+                            onChange={onType}
                             inputProps={{ 'aria-label': 'search' }}
                         />
                     </div>
+                    <IconButton onClick={onSearch}>
+                        <SearchIcon/>
+                    </IconButton>
                 </Toolbar>
             </AppBar>
         </div>
