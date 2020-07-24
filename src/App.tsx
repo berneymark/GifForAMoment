@@ -6,13 +6,13 @@ import Trending from './Components/Trending/Trending';
 import Footer from './Components/Footer/Footer';
 
 function App() {
-  return (
+    return (
     <div className="App">
-      <Header></Header>
-      <Trending></Trending>
-      <Footer></Footer>
+        <Header></Header>
+        <Trending></Trending>
+        <Footer></Footer>
     </div>
-  );
+    );
 }
 
 export default App;
