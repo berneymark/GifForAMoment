@@ -5,11 +5,11 @@ import InputBase from '@material-ui/core/InputBase';
 import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
 
-import { createStyles, fade, Theme, makeStyles } from '@material-ui/core/styles';
+import { createStyles, fade, Theme, withStyles } from '@material-ui/core/styles';
 
 import SearchIcon from '@material-ui/icons/Search';
 
-const useStyles = makeStyles((theme:Theme) =>
+const styles = (theme:Theme) =>
     createStyles({
         root: {
             flexGrow: 1
@@ -60,11 +60,17 @@ const useStyles = makeStyles((theme:Theme) =>
                 },
             },
         }
-    })
+    }
 );
 
-function Header() {
-    const classes = useStyles();
+function Header(props: any) {
+    const { classes } = props;
+
+    const onSearch = (event: any) => {
+        event.preventDefault();
+        event.persist();
+        console.log(event.target.value);
+    }
 
     return (
         <div className={classes.root}>
@@ -79,11 +85,12 @@ function Header() {
                             <SearchIcon/>
                         </div>
                         <InputBase
-                            placeholder="search..."
                             classes={{
                                 root: classes.inputRoot,
                                 input: classes.inputInput
                             }}
+                            placeholder="search..."
+                            onChange={onSearch}
                             inputProps={{ 'aria-label': 'search' }}
                         />
                     </div>
@@ -93,4 +100,4 @@ function Header() {
     )
 }
 
-export default Header;
+export default withStyles(styles)(Header);
