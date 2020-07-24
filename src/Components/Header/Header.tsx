@@ -72,7 +72,10 @@ function Header() {
         <div className={classes.root}>
             <AppBar position="static">
                 <Toolbar>
-                    <Typography className={classes.title}>Gif For a Moment</Typography>
+                    <Typography className={classes.title}
+                                align="left">
+                        Gif For a Moment
+                    </Typography>
                     <div className={classes.search}>
                         <div className={classes.searchIcon}>
                             <SearchIcon/>
