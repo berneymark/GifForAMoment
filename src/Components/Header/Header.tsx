@@ -9,8 +9,6 @@ import { createStyles, fade, Theme, makeStyles } from '@material-ui/core/styles'
 
 import SearchIcon from '@material-ui/icons/Search';
 
-import SearchBar from '../SearchBar/SearchBar'
-
 const useStyles = makeStyles((theme:Theme) =>
     createStyles({
         root: {
@@ -91,7 +89,6 @@ function Header() {
                     </div>
                 </Toolbar>
             </AppBar>
-            <SearchBar/>
         </div>
     )
 }
