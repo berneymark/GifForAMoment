@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 
 import AppBar from '@material-ui/core/AppBar';
 import IconButton from '@material-ui/core/IconButton';
@@ -66,7 +66,6 @@ const styles = (theme:Theme) =>
 
 function Header(props: any) {
     const { classes } = props;
-    const [searchVar, setSearchVar] = useState("");
 
     var searchVal = "";
 
