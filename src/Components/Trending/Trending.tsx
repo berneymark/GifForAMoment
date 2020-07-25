@@ -36,10 +36,12 @@ class Trending extends React.Component<any, any> {
 
         return (
             <div className="TrendingBar">
-                <Typography variant="h3">
+                <Typography variant="h3" style={{paddingTop: "50px"}}>
                     Top Trending
                 </Typography>
-                <div className="trending">{listItems}</div>
+                <div className="trending" style={{paddingBottom: "20px"}}>
+                    {listItems}
+                </div>
             </div>
         );
     }
