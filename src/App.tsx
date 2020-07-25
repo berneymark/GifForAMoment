@@ -72,7 +72,11 @@ function App() {
         <div className="App">
             <Header setHeading={ setText }></Header>
             <a href={gifData.url} target="new" key={gifData.id}>
-                <img src={gifData.img} alt={gifData.title}/>
+                <img 
+                    id="gifResult"
+                    src={gifData.img} 
+                    alt={gifData.title}
+                />
             </a>
             <Trending></Trending>
             <Footer></Footer>
