@@ -1,4 +1,7 @@
 import React from 'react';
+
+import Typography from '@material-ui/core/Typography';
+
 import './Trending.css';
 
 class Trending extends React.Component<any, any> {
@@ -33,7 +36,9 @@ class Trending extends React.Component<any, any> {
 
         return (
             <div className="TrendingBar">
-                <h1>Top Trending</h1>
+                <Typography variant="h3">
+                    Top Trending
+                </Typography>
                 <div className="trending">{listItems}</div>
             </div>
         );
