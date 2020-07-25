@@ -10,7 +10,7 @@ class Trending extends React.Component<any, any> {
     }
 
     componentDidMount() {
-        const GIPHY_API_TRENDING_URL = 'https://api.giphy.com/v1/gifs/trending'
+        const GIPHY_API_TRENDING_URL = 'https://api.giphy.com/v1/gifs/trending';
         const GIPHY_API_KEY = process.env.REACT_APP_GIPHY_API_KEY;
 
         fetch(GIPHY_API_TRENDING_URL + '?api_key=' + GIPHY_API_KEY
