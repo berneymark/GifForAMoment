@@ -71,7 +71,6 @@ function Header(props: any) {
     var searchVal = "";
 
     const onSearch = (event: any) => {
-        console.log(searchVal);
         props.setHeading(searchVal);
     }
 
