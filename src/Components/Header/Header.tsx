@@ -51,7 +51,7 @@ const styles = (theme:Theme) =>
         inputInput: {
             padding: theme.spacing(1, 1, 1, 0),
             // vertical padding + font size from searchIcon
-            paddingLeft: `calc(1em + ${theme.spacing(4)}px)`,
+            paddingLeft: `calc(1em + ${theme.spacing(1)}px)`,
             transition: theme.transitions.create('width'),
             width: '100%',
             [theme.breakpoints.up('sm')]: {
@@ -82,8 +82,9 @@ function Header(props: any) {
         <div className={classes.root}>
             <AppBar position="static">
                 <Toolbar>
-                    <Typography className={classes.title}
-                                align="left">
+                    <Typography 
+                        className={classes.title}
+                        align="left">
                         Gif For a Moment
                     </Typography>
                     <div className={classes.search}>
