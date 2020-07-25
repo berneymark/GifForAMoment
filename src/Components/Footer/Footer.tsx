@@ -20,7 +20,7 @@ function Footer() {
     const classes = useStyles();
 
     return (
-        <Box border={1}>
+        <Box>
             <Grid
                 container
                 direction="row"
