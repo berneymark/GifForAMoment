@@ -14,11 +14,12 @@ function App() {
         alt: "Animated GIF"
     }
 
-    const [text, setText] = useState("");
+    const [text, setText] = useState<string>("");
     const [gifData, setGifData] = useState<any>(initGif);
 
     useEffect(() => {
-        searchedGif();
+        searchedGif(text);
+        console.log("TEST: " + text);
     }, [text]);
 
     const searchedGif = (searchTerm?: string) => {
@@ -34,12 +35,13 @@ function App() {
             fetch(GIPHY_API_SEARCH_URL + GIPHY_API_KEY + GIPHY_API_SEARCH_RESULT + searchTerm + GIPHY_API_SEARCH_TAGS)
                 .then((response) => response.json())
                 .then((data) => {
+                    console.log(data.data[0]);
                     setGifData(
                         {
-                            url: data.data.url,
-                            id: data.data.id,
-                            img: data.data.images.original.url,
-                            alt: data.data.title
+                            url: data.data[0].url,
+                            id: data.data[0].id,
+                            img: data.data[0].images.original.url,
+                            alt: data.data[0].title
                         }
                     );
                 })
