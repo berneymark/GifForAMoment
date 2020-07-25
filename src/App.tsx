@@ -4,7 +4,6 @@ import './App.css';
 import Header from './Components/Header/Header';
 import Trending from './Components/Trending/Trending';
 import Footer from './Components/Footer/Footer';
-import Results from './Components/Results/Results';
 
 function App() {
     const initGif = {
@@ -75,7 +74,6 @@ function App() {
             <a href={gifData.url} target="new" key={gifData.id}>
                 <img src={gifData.img} alt={gifData.title}/>
             </a>
-            <Results></Results>
             <Trending></Trending>
             <Footer></Footer>
         </div>
