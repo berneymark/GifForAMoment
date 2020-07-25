@@ -18,7 +18,6 @@ function App() {
 
     useEffect(() => {
         searchedGif(text);
-        console.log("TEST: " + text);
     }, [text]);
 
     const searchedGif = (searchTerm?: string) => {
@@ -34,7 +33,6 @@ function App() {
             fetch(GIPHY_API_SEARCH_URL + GIPHY_API_KEY + GIPHY_API_SEARCH_RESULT + searchTerm + GIPHY_API_SEARCH_TAGS)
                 .then((response) => response.json())
                 .then((data) => {
-                    console.log(data.data[0]);
                     setGifData(
                         {
                             url: data.data[0].url,
@@ -60,12 +58,6 @@ function App() {
                 })
                 .catch((error) => console.log('Error: ' + error));
         }
-
-        console.log(GIPHY_API_SEARCH_URL + GIPHY_API_KEY + GIPHY_API_SEARCH_RESULT + searchTerm + GIPHY_API_SEARCH_TAGS)
-
-        return (
-            <div>DONE</div>
-        );
     }
     
     return (
